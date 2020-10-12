@@ -15,7 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.http import HttpResponse
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#]
+
+#---------------------------------------------
+
+#Todas las vistas reciben un request, y lo que regresa es un respuesta
+def hello_world(request):
+    return HttpResponse('Hello, world!')
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('hello-world/', hello_world )
 ]
+
