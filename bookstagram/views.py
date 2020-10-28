@@ -15,7 +15,7 @@ def hello_world(request):
 #     import pdb; pdb.set_trace()
 #     return HttpResponse('Hola ke aze!')
 
-def hi(request):
+def sort_integers(request):
     """Hi."""
     # numbers = request.GET['numbers']
     numbers = [int(i) for i in request.GET['numbers'].split(',')]
@@ -32,3 +32,12 @@ def hi(request):
     return HttpResponse(json.dumps(data,indent=4), 
     content_type = 'application/json'
     )
+
+def say_hi(request, name, age):
+    #return a greeting
+    if age < 12:
+        message = 'Sorry {}, you are not allowed here'.format(name)
+    else:
+        message = 'Hello, {}!!! Welcome to Nookstagram :)'.format(name)
+    return HttpResponse(message) 
+
