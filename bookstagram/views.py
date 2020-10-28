@@ -11,8 +11,10 @@ def hello_world(request):
         now=datetime.now().strftime('%b %dth, %Y - %h:%M hrs')
     ))
 
-def hi(request):
-    import pdb; pdb.set_trace()
+# def hi(request):
+#     import pdb; pdb.set_trace()
+#     return HttpResponse('Hola ke aze!')
+
 # def hi(request):
 #     """Hi."""
 #     numbers = request.GET['numbers']
