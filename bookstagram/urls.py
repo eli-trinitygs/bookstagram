@@ -13,21 +13,19 @@
 #     1. Import the include() function: from django.urls import include, path
 #     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 
+"""Platzigram URLs module."""
+
 from django.urls import path
 
-from bookstagram import views
+from platzigram import views as local_views
+from posts import views as posts_views
+
 
 urlpatterns = [
-    path('hello-world/', views.hello_world),
-    path('sorted/', views.sort_integers),
-    path('hi/<str:name>/<int:age>/', views.say_hi),
+
+    path('hello-world/', local_views.hello_world),
+    path('sorted/', local_views.sort_integers),
+    path('hi/<str:name>/<int:age>/', local_views.say_hi),
+
+    path('posts/', posts_views.list_posts),
 ]
-
-"""urlpatterns = [
-    path('admin/', admin.site.urls),
-]
-
----------------------------------------------
-
-Todas las vistas reciben un request, y lo que regresa es un respuesta"""
-
