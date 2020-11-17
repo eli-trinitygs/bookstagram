@@ -13,11 +13,11 @@
 #     1. Import the include() function: from django.urls import include, path
 #     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 
-"""Platzigram URLs module."""
+"""Bookstagram URLs module."""
 
 from django.urls import path
 
-from platzigram import views as local_views
+from bookstagram import views as local_views
 from posts import views as posts_views
 
 
